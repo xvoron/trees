@@ -11,5 +11,10 @@ images.
 
 ## Solution?
 
-May be useful:
+1. Local maxima filtering:
+    1. Using Gaussian filter
+2. Template matching
+
+## Sources
 - https://realpython.com/python-opencv-color-spaces/
+- https://hal.archives-ouvertes.fr/search/index/?q=guillaume+perrin+xavier+descombes
