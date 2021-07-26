@@ -11,7 +11,7 @@ if __name__ == "__main__":
     _, w, h = template.shape[::-1]
 
     res = cv2.matchTemplate(frame, template, cv2.TM_CCOEFF_NORMED)
-    threshold = 0.5
+    threshold = 0.1
     loc = np.where(res>=threshold)
 
     for pt in zip(*loc[::-1]):

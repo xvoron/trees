@@ -1,5 +1,6 @@
 """Forest tree crowns counting
 
+
 Author: Artyom Voronin
 Brno, 2021
 """
@@ -13,15 +14,22 @@ from skimage.feature import peak_local_max
 
 
 def plot2d(px, py, img_raw, img_ret):
+    """Plot 2d image with pinpoint
+    markers on possible tree crown
+    and save to "tree_detected.jpg" file.
+    """
     for i in range(len(px)):
         cv2.drawMarker(img_raw, (px[i], py[i]), (0, 0, 255),
                 markerType=cv2.MARKER_CROSS, markerSize=20, thickness=2,
                 line_type=cv2.LINE_AA)
     cv2.namedWindow("Detected trees crowns", cv2.WINDOW_NORMAL)
     cv2.imshow("Detected trees crowns", img_raw)
-    cv2.imwrite('trees_detected.jpg', img_raw)
+    cv2.imwrite('doc/trees_detected.jpg', img_raw)
 
 def local_maximum(img, plot=False):
+    """Local maximum filtering
+
+    """
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     gray = gaussian_filter(gray, (8,8))
 
